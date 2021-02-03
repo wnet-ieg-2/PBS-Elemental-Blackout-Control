@@ -1,0 +1,46 @@
+{
+  "WXYZ": {
+    "user": "STREAM NAME",
+    "key": "VALID KEY",
+    "host": "https://lls.console.pbs.org/",
+    "comment": "The blackouts section below for 1970-01-01 is an example for a day and can be copy/pasted.  All times are in America/New_York and DST is automatically handled.  If a blackout extends past midnite it should end at 2359 and start the next day at 0000",
+    "blackouts": {
+      "2021-02-03": [
+        {
+          "comment": "Test",
+          "start": "1722",
+          "end": "1725"
+        }
+      ],
+      "2020-07-12": [
+        {
+          "comment": "70s Soul Superstars (My Music)",
+          "start": "0000",
+          "end": "0059"
+        }
+      ],
+      "2020-07-12": [
+        {
+          "comment": "70s Soul Superstars (My Music)",
+          "start": "1200",
+          "end": "1429"
+        }
+      ]
+    }
+  },
+  "WKRP": {
+    "user": "STREAM NAME 2",
+    "key": "VALID KEY",
+    "host": "https://lls.console.pbs.org/",
+    "blackouts": {
+      "2021-02-03": [
+        {
+          "comment": "Charlie Brown XMas",
+          "start": "1723",
+          "end": "1724"
+        }
+      ]
+    }
+  }
+
+}
