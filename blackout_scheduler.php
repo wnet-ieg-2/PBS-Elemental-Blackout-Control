@@ -41,21 +41,20 @@ foreach($channels as $channel_name => $channel) {
       if (!empty($blackoutlist)) {
         foreach ($blackoutlist as $blackout) {
           if ($miltime >= (int) $blackout['start'] && $miltime <= (int) $blackout['end']) {
-            echo "its $miltime and found blackout for $channel_name between " . $blackout['start'] . " and " . $blackout['end'] . " \n";
+            //echo "its $miltime and found blackout for $channel_name between " . $blackout['start'] . " and " . $blackout['end'] . " \n";
             $desired_status = "blacked_out";
             break; // don't need to check later blackouts
           }
         }
       }
     }
-    echo "livestream status for $channel_name is $last_status and should be $desired_status \n";
     if ($last_status != $desired_status) {
-      //echo "theyre different \n";
+      echo "livestream status for $channel_name is $last_status and should be $desired_status: ";
       if ($desired_status == "playing") {
-        echo "enabling livestream for $channel_name";
+        echo "enabling livestream for $channel_name \n";
         $response = $client->enable_elemental_blackout($channel['user'], 'false');
       } else {
-        echo "enabling blackout for $channel_name";
+        echo "enabling blackout for $channel_name \n";
         $response = $client->enable_elemental_blackout($channel['user'], 'true');
       }
       if (!json_decode($response)) {
