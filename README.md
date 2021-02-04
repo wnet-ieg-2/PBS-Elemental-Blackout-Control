@@ -18,5 +18,9 @@ The script will then update the "blackout_status_STATIONNAME" file with the stat
 
 Note that the directory these files are in must be writable by the user running the script, in order to update the "blackout_status_STATIONNAME" file(s).
 
-
+There are four other files in this repository.
+* class_pbs_elemental_client.php which contains the necessary support class for communicating with PBS's AWS Elemental endpoint
+* test_run.php which can be used to check that you have a valid schedule.json file and are able to communicate with the Elemental
+* LICENCE which contains the GPL2 license
+* README.md this document
 
