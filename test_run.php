@@ -22,6 +22,7 @@ foreach($channels as $channel_name => $channel) {
     $client = new WNET_PBS_Elemental_Client($channel['user'], $channel['key'], $channel['host']);
     $response = $client->enable_elemental_blackout($channel['user'], 'false');
     if (!json_decode($response)) {
+      echo $response . "\n";
       echo "bad JSON returned from " . $channel['user'] . "\n";
       continue;
     }

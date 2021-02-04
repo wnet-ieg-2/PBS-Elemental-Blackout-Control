@@ -36,6 +36,13 @@ class WNET_PBS_Elemental_Client {
     curl_setopt( $ch, CURLOPT_POST, true );
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     $result = curl_exec($ch);
+    $errors = curl_error($ch);
+    $info = curl_getinfo($ch);
+    if (!empty($errors) || !json_decode($result)) {
+      echo "errors:" . json_encode($errors) . "\n";
+      echo "info" . json_encode($info). "\n";
+    }
+    curl_close($ch);
     return $result;
   }
 

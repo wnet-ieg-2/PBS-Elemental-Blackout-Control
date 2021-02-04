@@ -59,6 +59,7 @@ foreach($channels as $channel_name => $channel) {
       }
       if (!json_decode($response)) {
         echo "bad JSON returned from " . $channel['user'] . "\n";
+	echo $response . "\n";
         continue;
       }
       $status_ary = json_decode($response, true);
